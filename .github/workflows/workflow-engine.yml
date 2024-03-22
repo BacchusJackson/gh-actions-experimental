@@ -6,11 +6,20 @@ jobs:
     name: A job to say hello
     steps:
       - uses: actions/checkout@v4
+      - id: vars
+        run: |
+          echo full_image_tag="ttl.sh/$(cat /proc/sys/kernel/random/uuid):30m" >> $GITHUB_OUTPUT
+          echo full_bundle_tag="ttl.sh/$(cat /proc/sys/kernel/random/uuid):30m" >> $GITHUB_OUTPUT
       - name: Hello world action step
         id: hello
         uses: ./.github/actions/workflow-engine
         with:
-          who-to-greet: 'Mona the Octocat'
+          artifact_dir: "artifacts"
+          build_dir: "."
+          dockerfile: "Dockerfile"
+          tag: ${{ steps.vars.outputs.full_image_tag }}
+          bundle_publish_tag: ${{ steps.vars.outputs.full_bundle_tag }}
+
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
