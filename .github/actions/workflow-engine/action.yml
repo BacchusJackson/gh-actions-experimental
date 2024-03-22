@@ -77,7 +77,7 @@ inputs:
     description: The target build stage to build (e.g., [linux/amd64])
 runs:
   using: docker
-  image: docker://ghcr.io/cms-enterprise/batcave/workflow-engine:v0.0.1-rc.12
+  image: "Dockerfile"
   env:
     WFE_ARTIFACT_DIR: ${{ inputs.artifact_dir }}
     WFE_CODE_SCAN_ENABLED: ${{ inputs.code_scan_enabled }}
