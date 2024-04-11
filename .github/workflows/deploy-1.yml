@@ -1,0 +1,14 @@
+name: GitOps Deploy
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          echo "Running deploy..."
+          sleep 3
+          echo "Done."
