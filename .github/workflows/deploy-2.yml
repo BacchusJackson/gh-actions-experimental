@@ -1,4 +1,4 @@
-name: GitOps Deploy 1
+name: GitOps Deploy 2
 on:
   workflow_dispatch:
   push:
