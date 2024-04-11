@@ -3,6 +3,9 @@ on:
   workflow_dispatch:
   push:
 
+concurrency:
+  group: "deploy"
+
 jobs:
   deploy:
     runs-on: ubuntu-latest

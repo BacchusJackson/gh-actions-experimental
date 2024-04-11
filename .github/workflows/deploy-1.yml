@@ -1,7 +1,11 @@
 name: GitOps Deploy 1
+
 on:
   workflow_dispatch:
   push:
+
+concurrency:
+  group: "deploy"
 
 jobs:
   deploy:
