@@ -1,4 +1,4 @@
-name: GitOps Deploy 1
+name: Test Git Cloning
 
 on:
   workflow_dispatch:
@@ -12,7 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: |
-          echo "Running deploy..."
-          sleep 3
-          echo "Done."
+      - uses: gatecheckdev/deploykit@main
