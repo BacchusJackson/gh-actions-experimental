@@ -14,3 +14,7 @@ jobs:
           ssh-key: ${{ secrets.MANIFEST_DEPLOY_TOKEN }}
 
       - uses: gatecheckdev/deploykit-action@experimental
+        with:
+          image: "some-experimental-image:abc123"
+          service: "knight-light-server-flask"
+          service-directory: "impl"
