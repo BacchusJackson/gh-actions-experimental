@@ -18,3 +18,4 @@ jobs:
           image: "some-experimental-image:abc123"
           service: "knight-light-server-flask"
           service-directory: "impl"
+          manifest-deploy-token: ${{ secrets.MANIFEST_DEPLOY_TOKEN }}
